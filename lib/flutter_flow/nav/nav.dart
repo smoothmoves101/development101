@@ -96,14 +96,14 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           builder: (context, params) => const HomepageWidget(),
         ),
         FFRoute(
-          name: 'booknow',
-          path: '/booknow',
-          builder: (context, params) => const BooknowWidget(),
-        ),
-        FFRoute(
           name: 'signuped',
           path: '/signuped',
           builder: (context, params) => const SignupedWidget(),
+        ),
+        FFRoute(
+          name: 'booking',
+          path: '/booking',
+          builder: (context, params) => const BookingWidget(),
         )
       ].map((r) => r.toRoute(appStateNotifier)).toList(),
     );

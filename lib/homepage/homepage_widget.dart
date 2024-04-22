@@ -169,7 +169,7 @@ class _HomepageWidgetState extends State<HomepageWidget> {
                   child: FFButtonWidget(
                     onPressed: () async {
                       context.pushNamed(
-                        'booknow',
+                        'booking',
                         extra: <String, dynamic>{
                           kTransitionInfoKey: const TransitionInfo(
                             hasTransition: true,

@@ -1,8 +1,8 @@
 import '/flutter_flow/flutter_flow_util.dart';
-import 'booknow_widget.dart' show BooknowWidget;
+import 'booking_widget.dart' show BookingWidget;
 import 'package:flutter/material.dart';
 
-class BooknowModel extends FlutterFlowModel<BooknowWidget> {
+class BookingModel extends FlutterFlowModel<BookingWidget> {
   ///  State fields for stateful widgets in this page.
 
   final unfocusNode = FocusNode();
@@ -18,9 +18,6 @@ class BooknowModel extends FlutterFlowModel<BooknowWidget> {
   FocusNode? textFieldFocusNode3;
   TextEditingController? textController3;
   String? Function(BuildContext, String?)? textController3Validator;
-  DateTime? datePicked1;
-  DateTime? datePicked2;
-  DateTime? datePicked3;
 
   @override
   void initState(BuildContext context) {}
