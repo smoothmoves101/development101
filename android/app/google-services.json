@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "692765118462",
+    "project_id": "walker-booking-service",
+    "storage_bucket": "walker-booking-service.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:692765118462:android:ed251e70a82414e31bfaaf",
+        "android_client_info": {
+          "package_name": "com.mycompany.walkerjanitorialandlandscapingservicesbookingapp"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBCIvsTkvaiJiHkbcJVsJZaxzZUudT9Vnc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
