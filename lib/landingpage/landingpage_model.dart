@@ -1,8 +1,8 @@
 import '/flutter_flow/flutter_flow_util.dart';
-import 'auth1_widget.dart' show Auth1Widget;
+import 'landingpage_widget.dart' show LandingpageWidget;
 import 'package:flutter/material.dart';
 
-class Auth1Model extends FlutterFlowModel<Auth1Widget> {
+class LandingpageModel extends FlutterFlowModel<LandingpageWidget> {
   ///  State fields for stateful widgets in this page.
 
   final unfocusNode = FocusNode();
@@ -11,6 +11,15 @@ class Auth1Model extends FlutterFlowModel<Auth1Widget> {
   int get tabBarCurrentIndex =>
       tabBarController != null ? tabBarController!.index : 0;
 
+  // State field(s) for emailAddress widget.
+  FocusNode? emailAddressFocusNode;
+  TextEditingController? emailAddressTextController;
+  String? Function(BuildContext, String?)? emailAddressTextControllerValidator;
+  // State field(s) for password widget.
+  FocusNode? passwordFocusNode;
+  TextEditingController? passwordTextController;
+  late bool passwordVisibility;
+  String? Function(BuildContext, String?)? passwordTextControllerValidator;
   // State field(s) for emailAddress_Create widget.
   FocusNode? emailAddressCreateFocusNode;
   TextEditingController? emailAddressCreateTextController;
@@ -31,6 +40,7 @@ class Auth1Model extends FlutterFlowModel<Auth1Widget> {
 
   @override
   void initState(BuildContext context) {
+    passwordVisibility = false;
     passwordCreateVisibility = false;
     passwordConfirmVisibility = false;
   }
@@ -39,6 +49,12 @@ class Auth1Model extends FlutterFlowModel<Auth1Widget> {
   void dispose() {
     unfocusNode.dispose();
     tabBarController?.dispose();
+    emailAddressFocusNode?.dispose();
+    emailAddressTextController?.dispose();
+
+    passwordFocusNode?.dispose();
+    passwordTextController?.dispose();
+
     emailAddressCreateFocusNode?.dispose();
     emailAddressCreateTextController?.dispose();
 

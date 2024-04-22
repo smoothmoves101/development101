@@ -72,23 +72,14 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
       debugLogDiagnostics: true,
       refreshListenable: appStateNotifier,
       errorBuilder: (context, state) =>
-          appStateNotifier.loggedIn ? const HomepageWidget() : const Auth1Widget(),
+          appStateNotifier.loggedIn ? const HomepageWidget() : const LandingpageWidget(),
       routes: [
         FFRoute(
           name: '_initialize',
           path: '/',
-          builder: (context, _) =>
-              appStateNotifier.loggedIn ? const HomepageWidget() : const Auth1Widget(),
-        ),
-        FFRoute(
-          name: 'Auth1',
-          path: '/auth1',
-          builder: (context, params) => const Auth1Widget(),
-        ),
-        FFRoute(
-          name: 'Auth2',
-          path: '/auth2',
-          builder: (context, params) => const Auth2Widget(),
+          builder: (context, _) => appStateNotifier.loggedIn
+              ? const HomepageWidget()
+              : const LandingpageWidget(),
         ),
         FFRoute(
           name: 'homepage',
@@ -104,6 +95,11 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           name: 'booking',
           path: '/booking',
           builder: (context, params) => const BookingWidget(),
+        ),
+        FFRoute(
+          name: 'landingpage',
+          path: '/landingpage',
+          builder: (context, params) => const LandingpageWidget(),
         )
       ].map((r) => r.toRoute(appStateNotifier)).toList(),
     );
@@ -274,7 +270,7 @@ class FFRoute {
 
           if (requireAuth && !appStateNotifier.loggedIn) {
             appStateNotifier.setRedirectLocationIfUnset(state.uri.toString());
-            return '/auth1';
+            return '/landingpage';
           }
           return null;
         },
