@@ -6,7 +6,7 @@ import 'package:provider/provider.dart';
 import '/auth/base_auth_user_provider.dart';
 
 import '/index.dart';
-import '/flutter_flow/flutter_flow_theme.dart';
+import '/main.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 
 export 'package:go_router/go_router.dart';
@@ -72,19 +72,13 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
       debugLogDiagnostics: true,
       refreshListenable: appStateNotifier,
       errorBuilder: (context, state) =>
-          appStateNotifier.loggedIn ? const HomepageWidget() : const LandingpageWidget(),
+          appStateNotifier.loggedIn ? const NavBarPage() : const LandingpageWidget(),
       routes: [
         FFRoute(
           name: '_initialize',
           path: '/',
-          builder: (context, _) => appStateNotifier.loggedIn
-              ? const HomepageWidget()
-              : const LandingpageWidget(),
-        ),
-        FFRoute(
-          name: 'homepage',
-          path: '/homepage',
-          builder: (context, params) => const HomepageWidget(),
+          builder: (context, _) =>
+              appStateNotifier.loggedIn ? const NavBarPage() : const LandingpageWidget(),
         ),
         FFRoute(
           name: 'signuped',
@@ -94,12 +88,20 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
         FFRoute(
           name: 'booking',
           path: '/booking',
-          builder: (context, params) => const BookingWidget(),
+          builder: (context, params) => params.isEmpty
+              ? const NavBarPage(initialPage: 'booking')
+              : const BookingWidget(),
         ),
         FFRoute(
           name: 'landingpage',
           path: '/landingpage',
           builder: (context, params) => const LandingpageWidget(),
+        ),
+        FFRoute(
+          name: 'home',
+          path: '/home',
+          builder: (context, params) =>
+              params.isEmpty ? const NavBarPage(initialPage: 'home') : const HomeWidget(),
         )
       ].map((r) => r.toRoute(appStateNotifier)).toList(),
     );
@@ -284,15 +286,11 @@ class FFRoute {
                 )
               : builder(context, ffParams);
           final child = appStateNotifier.loading
-              ? Center(
-                  child: SizedBox(
-                    width: 50.0,
-                    height: 50.0,
-                    child: CircularProgressIndicator(
-                      valueColor: AlwaysStoppedAnimation<Color>(
-                        FlutterFlowTheme.of(context).primary,
-                      ),
-                    ),
+              ? Container(
+                  color: Colors.transparent,
+                  child: Image.asset(
+                    'assets/images/IMG_5497[1].JPG',
+                    fit: BoxFit.cover,
                   ),
                 )
               : page;

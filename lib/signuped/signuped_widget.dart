@@ -86,7 +86,7 @@ class _SignupedWidgetState extends State<SignupedWidget> {
               ),
               FFButtonWidget(
                 onPressed: () async {
-                  context.pushNamed('homepage');
+                  context.pushNamed('home');
                 },
                 text: 'Go to Home',
                 options: FFButtonOptions(

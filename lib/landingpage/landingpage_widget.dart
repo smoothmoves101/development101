@@ -530,7 +530,7 @@ class _LandingpageWidgetState extends State<LandingpageWidget>
                                                       }
 
                                                       context.pushNamedAuth(
-                                                        'homepage',
+                                                        'home',
                                                         context.mounted,
                                                         extra: <String,
                                                             dynamic>{
@@ -738,7 +738,7 @@ class _LandingpageWidgetState extends State<LandingpageWidget>
                                                                 }
 
                                                                 context.goNamedAuth(
-                                                                    'homepage',
+                                                                    'home',
                                                                     context
                                                                         .mounted);
                                                               },
@@ -825,7 +825,7 @@ class _LandingpageWidgetState extends State<LandingpageWidget>
                                                                       }
 
                                                                       context.goNamedAuth(
-                                                                          'homepage',
+                                                                          'home',
                                                                           context
                                                                               .mounted);
                                                                     },
@@ -1459,7 +1459,7 @@ class _LandingpageWidgetState extends State<LandingpageWidget>
                                                                 }
 
                                                                 context.goNamedAuth(
-                                                                    'homepage',
+                                                                    'home',
                                                                     context
                                                                         .mounted);
                                                               },
@@ -1546,7 +1546,7 @@ class _LandingpageWidgetState extends State<LandingpageWidget>
                                                                       }
 
                                                                       context.goNamedAuth(
-                                                                          'homepage',
+                                                                          'home',
                                                                           context
                                                                               .mounted);
                                                                     },
