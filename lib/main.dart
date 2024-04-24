@@ -120,8 +120,9 @@ class _NavBarPageState extends State<NavBarPage> {
   @override
   Widget build(BuildContext context) {
     final tabs = {
-      'home': const HomeWidget(),
       'booking': const BookingWidget(),
+      'home': const HomeWidget(),
+      'logout': const LogoutWidget(),
     };
     final currentIndex = tabs.keys.toList().indexOf(_currentPageName);
 
@@ -142,6 +143,13 @@ class _NavBarPageState extends State<NavBarPage> {
         items: const <BottomNavigationBarItem>[
           BottomNavigationBarItem(
             icon: Icon(
+              Icons.library_books_sharp,
+            ),
+            label: 'request',
+            tooltip: '',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(
               Icons.home_sharp,
             ),
             label: 'home',
@@ -149,9 +157,9 @@ class _NavBarPageState extends State<NavBarPage> {
           ),
           BottomNavigationBarItem(
             icon: Icon(
-              Icons.library_books_sharp,
+              Icons.logout,
             ),
-            label: 'request',
+            label: '',
             tooltip: '',
           )
         ],
