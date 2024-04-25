@@ -602,9 +602,30 @@ class _LandingpageWidgetState extends State<LandingpageWidget>
                                                       .fromSTEB(
                                                           0.0, 0.0, 0.0, 16.0),
                                                   child: FFButtonWidget(
-                                                    onPressed: () {
-                                                      print(
-                                                          'Button pressed ...');
+                                                    onPressed: () async {
+                                                      context.pushNamed(
+                                                        'pass',
+                                                        queryParameters: {
+                                                          'oobCode':
+                                                              serializeParam(
+                                                            '',
+                                                            ParamType.String,
+                                                          ),
+                                                        }.withoutNulls,
+                                                        extra: <String,
+                                                            dynamic>{
+                                                          kTransitionInfoKey:
+                                                              const TransitionInfo(
+                                                            hasTransition: true,
+                                                            transitionType:
+                                                                PageTransitionType
+                                                                    .fade,
+                                                            duration: Duration(
+                                                                milliseconds:
+                                                                    0),
+                                                          ),
+                                                        },
+                                                      );
                                                     },
                                                     text: 'Forgot Password',
                                                     options: FFButtonOptions(

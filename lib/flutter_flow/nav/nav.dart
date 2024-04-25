@@ -109,6 +109,16 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           builder: (context, params) => params.isEmpty
               ? const NavBarPage(initialPage: 'logout')
               : const LogoutWidget(),
+        ),
+        FFRoute(
+          name: 'pass',
+          path: '/pass',
+          builder: (context, params) => PassWidget(
+            oobCode: params.getParam(
+              'oobCode',
+              ParamType.String,
+            ),
+          ),
         )
       ].map((r) => r.toRoute(appStateNotifier)).toList(),
     );
