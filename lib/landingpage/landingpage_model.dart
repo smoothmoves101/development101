@@ -47,7 +47,6 @@ class LandingpageModel extends FlutterFlowModel<LandingpageWidget> {
 
   @override
   void dispose() {
-    unfocusNode.dispose();
     tabBarController?.dispose();
     emailAddressFocusNode?.dispose();
     emailAddressTextController?.dispose();
